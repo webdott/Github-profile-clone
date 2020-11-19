@@ -6,7 +6,7 @@ const stickyPosition = navbarSticky.offsetTop;
 
 const navbarStickyMobile = document.querySelector('#nav2-mobile');
 
-let stickyPositionMobile = navbarStickyMobile.offsetTop;
+let stickyPositionMobile = 424;
 
 let lastScrollPos = 0;
 let tick = false;
