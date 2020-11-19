@@ -6,7 +6,7 @@ const stickyPosition = navbarSticky.offsetTop;
 
 const navbarStickyMobile = document.querySelector('#nav2-mobile');
 
-let stickyPositionMobile;
+let stickyPositionMobile = navbarStickyMobile.offsetTop;
 
 let lastScrollPos = 0;
 let tick = false;
@@ -400,7 +400,7 @@ const queryData = `{
 
 const API_URL = 'https://api.github.com/graphql';
 
-const token = '7cae21893f88f8e0a261f9476c781a5e0507abdd';
+const token = '9daa12afcd6d7bbbc630944bd1ebef29a7c4759b';
 
 const queryOptions = {
     method: "POST",
@@ -451,7 +451,6 @@ window.addEventListener('scroll', (e) => {
         addSticky(lastScrollPos);
         showAccount(lastScrollPos, username, namePosition);
       } else if (media_sm.matches) {
-        stickyPositionMobile = navbarStickyMobile.offsetTop;
         console.log(stickyPositionMobile, lastScrollPos);
         addStickyMobile(lastScrollPos, stickyPositionMobile);
       }
