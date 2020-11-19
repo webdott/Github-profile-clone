@@ -400,7 +400,7 @@ const queryData = `{
 
 const API_URL = 'https://api.github.com/graphql';
 
-const token = '9daa12afcd6d7bbbc630944bd1ebef29a7c4759b';
+const token = 'd4c48edc9b6f82846996acdfefa971f8c38ac49e';
 
 const queryOptions = {
     method: "POST",
