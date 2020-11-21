@@ -1,4 +1,5 @@
 //============================= Initialize Variables ====================================//
+
 const navbarSticky = document.querySelector('#nav2');
 const main = document.querySelector('main');
 
@@ -72,11 +73,6 @@ const showMenu = () => {
 
 // ================================ Navbar ==========================================//
 
-// ================================ Media Query ======================================//
-const media_lg = window.matchMedia('(min-width: 768px)');
-
-const media_sm = window.matchMedia('(max-width: 767px)');
-
 // =============================== Fill Profile Details ===============================//
 
 const profileSection = document.querySelector('.left-up');
@@ -102,7 +98,7 @@ const fillProfileSection = (data) => {
       <img src="${avatarUrl}" alt="profile-picture">
       <div class="status-emoji">
           ${status.emojiHTML}
-          <span class="edit-status"><a href="#">Edit status</a></span>
+          <span class="edit-status"><a href="#">&nbsp; Edit status</a></span>
       </div>
     </div>
 
@@ -400,7 +396,7 @@ const queryData = `{
 
 const API_URL = 'https://api.github.com/graphql';
 
-const token = `${secrets.GITHUB_TOKEN}`;
+const token = '';
 
 const queryOptions = {
     method: "POST",
@@ -447,13 +443,11 @@ window.addEventListener('scroll', (e) => {
 
   if (!tick) {
     window.requestAnimationFrame(() => {
-      if (media_lg.matches) {
-        addSticky(lastScrollPos);
-        showAccount(lastScrollPos, username, namePosition);
-      } else if (media_sm.matches) {
-        console.log(stickyPositionMobile, lastScrollPos);
-        addStickyMobile(lastScrollPos, stickyPositionMobile);
-      }
+
+      addSticky(lastScrollPos);
+      showAccount(lastScrollPos, username, namePosition);
+    
+      addStickyMobile(lastScrollPos, stickyPositionMobile);
       tick = false;
     });
 
