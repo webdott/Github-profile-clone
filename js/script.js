@@ -396,7 +396,7 @@ const queryData = `{
 
 const API_URL = 'https://api.github.com/graphql';
 
-const token = process.ENV.token;
+const token = process.env.token;
 
 const queryOptions = {
     method: "POST",
