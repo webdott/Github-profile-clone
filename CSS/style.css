@@ -306,6 +306,7 @@ a:hover{
     width: 100%;
     padding: 0 2rem;
     height: auto;
+    min-height: 72vh;
     display: flex;
 }
 
@@ -332,10 +333,10 @@ a:hover{
 
 .profile-picture .status-emoji{
     position: absolute;
-    bottom: 0;
-    left: 100%;
+    bottom: 10px;
+    left: 92%;
     z-index: 2;
-    padding: .6rem;
+    padding: 0;
     margin-bottom: 2rem;
     margin-left: -2.5rem;
     background-color: #fff;
@@ -347,15 +348,29 @@ a:hover{
     word-wrap: none;
     white-space: nowrap;
     text-overflow: clip;
-    border-radius: 2rem;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: width .15s ease-in;
 }
 
+.profile-picture .status-emoji .emoji{
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emoji .g-emoji{
+    margin-left: -5px;
+}
+
 .edit-status{
     display: none;
+    margin-left: -1rem;
+    padding-right: 1rem;
     visibility: hidden;
     opacity: 0;
     word-wrap: none;
@@ -364,13 +379,21 @@ a:hover{
 }
 
 .edit-status a{
+    color: #586069;
+    opacity: .7;
     text-decoration: none;
 }
 
+.edit-status a:hover{
+    color: #0366d6;
+    opacity: 1;
+}
+
 .status-emoji:hover{
-    /* width: 100px; */
+    width: auto;
     cursor: pointer;
     border-radius: 2em;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 
@@ -378,7 +401,8 @@ a:hover{
     display: inline;
     visibility: visible;
     opacity: 1;
-    font-size: .75rem;
+    font-size: 1rem;
+    font-weight: medium;
 }
 
 .name-details{
@@ -456,14 +480,14 @@ a:hover{
 .profile-details ul li{
     display: flex;
     align-items: center;
-    padding-top: 4px;
+    padding-top: 7px;
 }
 
 .profile-details ul li a, .profile-details ul li span{
     width: 80%;
     overflow: hidden;
     white-space: nowrap;
-    font-size: .875rem;
+    font-size: 1rem;
     margin-left: .3rem;
     text-overflow: ellipsis;
     color: #24292e;
@@ -563,6 +587,10 @@ a:hover{
     border: 1px solid #e1e4e8;
     border-radius: 6px;
     outline-style: none;
+}
+
+.repositories .loader{
+    margin-top: 2rem;
 }
 
 .repositories .repository{
@@ -705,6 +733,117 @@ a:hover{
 .show{
     display: none;
 }
+
+
+/* Loader */
+
+.loader{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lds-spinner {
+    color: official;
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+.loader.none{
+    display: none;
+}
+
+.lds-spinner div {
+  transform-origin: 40px 40px;
+  animation: lds-spinner 1.2s linear infinite;
+}
+
+.lds-spinner div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 37px;
+  width: 5px;
+  height: 18px;
+  border-radius: 20%;
+  background: #e1e4e8;
+}
+
+.lds-spinner div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
+}
+
+.lds-spinner div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
+}
+
+.lds-spinner div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
+}
+
+.lds-spinner div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
+}
+
+.lds-spinner div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
+}
+
+.lds-spinner div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
+}
+
+.lds-spinner div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+}
+
+.lds-spinner div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
+}
+
+.lds-spinner div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
+}
+
+.lds-spinner div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
+}
+
+.lds-spinner div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
+}
+
+.lds-spinner div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+}
+
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+  
+/* Loader End */
 
 /* ============== Section and Component Styles End ==================== */
 
